@@ -5,7 +5,12 @@ import { IoMdClose } from 'react-icons/io'
 
 const Sidebar = () => {
   return (
-    <h4>sidebar component</h4>
+    <aside className='sidebar'>
+      <button className='close-btn'>
+        <IoMdClose />
+      </button>
+      <Links styleClass='sidebar-links' />
+    </aside>
   )
 }
 
