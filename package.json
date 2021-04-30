@@ -14,7 +14,8 @@
     "serve": "gatsby serve",
     "clean": "gatsby clean",
     "refrech": "gatsby clean && gatsby develop",
-    "rebuild": "gatsby clean && gatsby build"
+    "rebuild": "gatsby clean && gatsby build",
+    "preview": "gatsby clean && gatsby build && gatsby serve"
   },
   "dependencies": {
     "@mdx-js/mdx": "^1.6.22",
