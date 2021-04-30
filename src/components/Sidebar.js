@@ -3,10 +3,10 @@ import Links from '../constants/links'
 import Categories from '../components/Categories'
 import { IoMdClose } from 'react-icons/io'
 
-const Sidebar = () => {
+const Sidebar = ({ isOpen, toggleMenu }) => {
   return (
-    <aside className='sidebar'>
-      <button className='close-btn'>
+    <aside className={`sidebar ${isOpen ? 'showSidebar' : ''}`}>
+      <button className='close-btn' onClick={toggleMenu}>
         <IoMdClose />
       </button>
       <Links styleClass='sidebar-links' />
