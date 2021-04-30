@@ -21,6 +21,7 @@ const Layout = ({ children }) => {
       <Navbar toggleMenu={toggleMenu} />
       <Sidebar isOpen={isOpen} toggleMenu={toggleMenu} />
       <main>{children}</main>
+      <Footer />
     </>
   )
 }
