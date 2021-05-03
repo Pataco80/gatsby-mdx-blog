@@ -1,11 +1,11 @@
-import React from "react"
-import Highlight, { defaultProps } from "prism-react-renderer"
-import theme from "prism-react-renderer/themes/vsDark"
-import styled from "styled-components"
+import React from 'react'
+import Highlight, { defaultProps } from 'prism-react-renderer'
+import theme from 'prism-react-renderer/themes/vsDark'
+import styled from 'styled-components'
 
-const PrismWrapper = props => {
+const PrismWrapper = (props) => {
   const className = props.children.props.className
-  const language = className.split("-")[1]
+  const language = className.split('-')[1]
 
   return (
     <Highlight
@@ -18,7 +18,7 @@ const PrismWrapper = props => {
         return (
           <Container>
             <Pre className={className} style={style}>
-              <div className="code-tab">{language}</div>
+              <div className='code-tab'>{language}</div>
               {tokens.map((line, i) => (
                 <div {...getLineProps({ line, key: i })}>
                   {line.map((token, key) => (
@@ -40,7 +40,7 @@ const Pre = styled.pre`
   border-radius: var(--radius);
   margin: 3rem 0;
   font-size: 0.9rem;
-  font-family: "Courier New", Courier, monospace;
+  font-family: 'Courier New', Courier, monospace;
   overflow-x: scroll;
   .token-line {
     line-height: 1.5;

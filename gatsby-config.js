@@ -6,6 +6,7 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
+    `gatsby-plugin-mdx`,
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
@@ -30,6 +31,13 @@ module.exports = {
         path: './src/pages/',
       },
       __key: 'pages',
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `posts`,
+        path: `${__dirname}/src/posts`,
+      },
     },
   ],
 }
