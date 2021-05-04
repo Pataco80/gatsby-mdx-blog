@@ -13,7 +13,7 @@ export const query = graphql`
       frontmatter {
         title
         slug
-        date(locale: "CJ", formatString: "DD, MMM YYYY")
+        date(locale: "CH", formatString: "DD, MMM YYYY")
         category
         image {
           childImageSharp {
