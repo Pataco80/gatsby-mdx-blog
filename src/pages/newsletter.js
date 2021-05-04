@@ -8,7 +8,7 @@ const NewsLetter = () => {
           <h2>Get all the latest stories to your inbox</h2>
           <h4>I write to my friends every few weeks</h4>
           <form
-            action='post'
+            method='post'
             className='contact-form'
             name='newsletter'
             netlify-honeypot='bot-field'
