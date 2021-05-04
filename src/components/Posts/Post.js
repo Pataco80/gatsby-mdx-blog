@@ -6,7 +6,7 @@ import { Link } from 'gatsby'
 import styled from 'styled-components'
 
 const Post = ({ frontmatter, excerpt }) => {
-  const { title, slug, author, date, category, readTime, image } = frontmatter
+  const { title, slug, date, category, readTime, image } = frontmatter
   return (
     <Wrapper>
       <GatsbyImage image={getImage(image)} alt={title} />
