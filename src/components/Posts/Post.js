@@ -5,10 +5,28 @@ import { IoMdArrowRoundForward } from 'react-icons/io'
 import { Link } from 'gatsby'
 import styled from 'styled-components'
 
-const Post = () => {
-  
+const Post = ({ frontmatter, excerpt }) => {
+  const { title, slug, author, date, category, readTime, image } = frontmatter
   return (
-    <h4>single post</h4>
+    <Wrapper>
+      <GatsbyImage image={getImage(image)} alt={title} />
+      <div className='info'>
+        <p className='category'>{category}</p>
+        <h3>{title}</h3>
+        <div className='underline'></div>
+        <p>{excerpt}</p>
+        <Link to={`/posts/${slug}`} className='.link'>
+          Reade More <IoMdArrowRoundForward />
+        </Link>
+        <div className='underline'></div>
+        <footer>
+          <span className='date'>
+            <FaRegClock className='icon' /> {date}
+          </span>
+          <span>{readTime} min.</span>
+        </footer>
+      </div>
+    </Wrapper>
   )
 }
 
