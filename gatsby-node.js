@@ -1,30 +1,28 @@
-// const path = require('path')
+const path = require('path')
 
-// // create pages dynamically
-// exports.createPages = async ({ graphql, actions }) => {
-//   const { createPage } = actions
-//   const result = await graphql(`
-//     {
-//       allMdx {
-//         nodes {
-//           frontmatter {
-//             slug
-//           }
-//         }
-//       }
-      
-//     }
-//   `)
+exports.createPages = async ({ graphql, actions }) => {
+  const { createPage } = actions
+  const blogTemplate = path.resolve(`src/templates/post-template.js`)
 
-//   result.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
-//     createPage({
-//       path: `/posts/${slug}`,
-//       component: path.resolve(`src/templates/post-template.js`),
-//       context: {
-//         slug,
-//       },
-//     })
-//   })
+  const getPost = await graphql(`
+    {
+      allMdx {
+        nodes {
+          frontmatter {
+            slug
+          }
+        }
+      }
+    }
+  `)
 
-  
-// }
+  getPost.data.allMdx.nodes.forEach(({ frontmatter: { slug } }) => {
+    createPage({
+      path: `/posts/${slug}`,
+      component: blogTemplate,
+      context: {
+        slug,
+      },
+    })
+  })
+}

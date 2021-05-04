@@ -6,11 +6,63 @@ import { GatsbyImage, getImage } from 'gatsby-plugin-image'
 import Banner from '../components/Banner'
 import { graphql } from 'gatsby'
 import { MDXRenderer } from 'gatsby-plugin-mdx'
-const PostTemplate = () => {
-  return <h2>post template</h2>
+
+export const query = graphql`
+  query getPost($slug: String!) {
+    post: mdx(frontmatter: { slug: { eq: $slug } }) {
+      frontmatter {
+        title
+        slug
+        date(locale: "CJ", formatString: "DD, MMM YYYY")
+        category
+        image {
+          childImageSharp {
+            gatsbyImageData(
+              formats: WEBP
+              layout: CONSTRAINED
+              placeholder: BLURRED
+            )
+          }
+        }
+      }
+      body
+    }
+  }
+`
+
+const PostTemplate = ({ data }) => {
+  const {
+    post: {
+      frontmatter: { title, date, category, image },
+      body,
+    },
+  } = data
+  console.log(title)
+  return (
+    <Layout>
+      <Hero />
+      <Wrapper>
+        <article>
+          <GatsbyImage
+            image={getImage(image)}
+            alt={title}
+            className='main-image'
+          />
+          <div className='post-info'>
+            <span>{category}</span>
+            <h2>{title}</h2>
+            <p>{date}</p>
+            <div className='underline'></div>
+          </div>
+          <MDXRenderer>{body}</MDXRenderer>
+        </article>
+        <div>
+          <Banner />
+        </div>
+      </Wrapper>
+    </Layout>
+  )
 }
-
-
 
 const Wrapper = styled.section`
   width: 85vw;
@@ -62,5 +114,4 @@ const Wrapper = styled.section`
     }
   }
 `
-
 export default PostTemplate
