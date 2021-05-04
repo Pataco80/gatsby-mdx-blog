@@ -6,16 +6,29 @@ module.exports = {
     'gatsby-plugin-styled-components',
     'gatsby-plugin-image',
     'gatsby-plugin-react-helmet',
-    `gatsby-plugin-mdx`,
+
     {
       resolve: 'gatsby-plugin-manifest',
       options: {
         icon: 'src/assets/favicon.png',
       },
     },
-    'gatsby-plugin-mdx',
     'gatsby-plugin-sharp',
     'gatsby-transformer-sharp',
+    `gatsby-remark-images`,
+    {
+      resolve: `gatsby-plugin-mdx`,
+      options: {
+        gatsbyRemarkPlugins: [
+          {
+            resolve: `gatsby-remark-images`,
+            options: {
+              maxWidth: 768,
+            },
+          },
+        ],
+      },
+    },
     {
       resolve: 'gatsby-source-filesystem',
       options: {
