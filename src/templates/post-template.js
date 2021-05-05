@@ -24,6 +24,15 @@ export const query = graphql`
             )
           }
         }
+        embedImagesLocal {
+          childImageSharp {
+            gatsbyImageData(
+              layout: CONSTRAINED
+              placeholder: BLURRED
+              formats: WEBP
+            )
+          }
+        }
       }
       body
     }
@@ -33,11 +42,10 @@ export const query = graphql`
 const PostTemplate = ({ data }) => {
   const {
     post: {
-      frontmatter: { title, date, category, image },
+      frontmatter: { title, date, category, image, embedImagesLocal },
       body,
     },
   } = data
-  console.log(title)
   return (
     <Layout>
       <Hero />
@@ -54,7 +62,7 @@ const PostTemplate = ({ data }) => {
             <p>{date}</p>
             <div className='underline'></div>
           </div>
-          <MDXRenderer>{body}</MDXRenderer>
+          <MDXRenderer embedImagesLocal={embedImagesLocal}>{body}</MDXRenderer>
         </article>
         <div>
           <Banner />
