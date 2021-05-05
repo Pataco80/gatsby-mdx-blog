@@ -3,6 +3,7 @@ import Hero from '../components/Hero'
 import Layout from '../components/Layout'
 import Posts from '../components/Posts'
 import { graphql, useStaticQuery } from 'gatsby'
+import { RegVideo } from '../components/Complete'
 
 export const getRecentPosts = graphql`
   {
@@ -41,6 +42,7 @@ const IndexPage = () => {
   return (
     <Layout>
       <Hero showPerson />
+      <RegVideo />
       <Posts posts={postsList} title='Recents Posts' />
     </Layout>
   )
