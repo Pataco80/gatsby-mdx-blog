@@ -6,7 +6,7 @@ import styled from 'styled-components'
 const PrismWrapper = (props) => {
   const className = props.children.props.className
   const language = className.split('-')[1]
-
+  console.log(language)
   return (
     <Highlight
       {...defaultProps}
@@ -21,6 +21,7 @@ const PrismWrapper = (props) => {
               <div className='code-tab'>{language}</div>
               {tokens.map((line, i) => (
                 <div {...getLineProps({ line, key: i })}>
+                  <span className='line-num'>{i + 1}</span>
                   {line.map((token, key) => (
                     <span {...getTokenProps({ token, key })} />
                   ))}
@@ -47,7 +48,7 @@ const Pre = styled.pre`
   }
   .code-tab {
     position: absolute;
-    top: 0;
+    top: 1px;
     right: 5%;
     color: rgb(156, 220, 254);
     font-size: 1rem;
@@ -58,6 +59,12 @@ const Pre = styled.pre`
     border-top-left-radius: var(--radius);
     border-top-right-radius: var(--radius);
     background: #1e1e1e;
+  }
+  .line-num {
+    text-align: right;
+    padding-right: 1em;
+    user-select: none;
+    opacity: 0.4;
   }
 `
 const Container = styled.article`

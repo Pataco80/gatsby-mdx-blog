@@ -5,6 +5,7 @@ import * as Headings from './Headings'
 import Code from './Code'
 import Blockquote from './Blockquote'
 import PrismSetup from './PrismSetup'
+import ExampleCode from './ExampleCode'
 export {
   Counter,
   LikeButton,
@@ -14,4 +15,5 @@ export {
   Code,
   Blockquote,
   PrismSetup,
+  ExampleCode,
 }

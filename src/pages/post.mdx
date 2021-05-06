@@ -19,9 +19,44 @@ _I'm baby humblebrag neutra taiyaki af vice bespoke locavore fanny pack_ ramps v
 
 # My First Post
 
-### Random Heading
+<h2 title='true'>Random Heading H2 with title props</h2>
 
-## More Examples
+<h2>Random Heading two simple</h2>
+
+<h4>inline code</h4>
+
+`console.log('Hello')`
+
+<blockquote display='warning'>
+  Warning !!!! I'm baby prism everyday carry post-ironic jean shorts venmo
+  health goth, migas pok pok vape beard umami. Poutine plaid before they sold
+  out cronut messenger bag, echo park hexagon tumblr +1 quinoa mumblecore paleo.
+  Activated charcoal drinking vinegar VHS gentrify put a bird on it tousled.
+</blockquote>
+
+<blockquote display='info'>
+  Info !!!! I'm baby prism everyday carry post-ironic jean shorts venmo health
+  goth, migas pok pok vape beard umami. Poutine plaid before they sold out
+  cronut messenger bag, echo park hexagon tumblr +1 quinoa mumblecore paleo.
+  Activated charcoal drinking vinegar VHS gentrify put a bird on it tousled.
+</blockquote>
+
+<blockquote display='default'>
+  Default !!!! I'm baby prism everyday carry post-ironic jean shorts venmo
+  health goth, migas pok pok vape beard umami. Poutine plaid before they sold
+  out cronut messenger bag, echo park hexagon tumblr +1 quinoa mumblecore paleo.
+  Activated charcoal drinking vinegar VHS gentrify put a bird on it tousled.
+</blockquote>
+
+<blockquote>
+  blockquote !!!! I'm baby prism everyday carry post-ironic jean shorts venmo
+  health goth, migas pok pok vape beard umami. Poutine plaid before they sold
+  out cronut messenger bag, echo park hexagon tumblr +1 quinoa mumblecore paleo.
+  Activated charcoal drinking vinegar VHS gentrify put a bird on it tousled.
+</blockquote>
+
+> blockquote MDX standard !!!!
+> I'm baby prism everyday carry post-ironic jean shorts venmo health goth, migas pok pok vape beard umami. Poutine plaid before they sold out cronut messenger bag, echo park hexagon tumblr +1 quinoa mumblecore paleo. Activated charcoal drinking vinegar VHS gentrify put a bird on it tousled.
 
 <div className="code">
 
@@ -64,7 +99,7 @@ const LikeButton = () => {
           Click thumbs up few times
         </p>
       </div>
-      <span>+{value}</span>
+      <span>{value}</span>
     </Wrapper>
   )
 }
@@ -82,6 +117,65 @@ const LikeButton = () => {
   src='https://www.youtube.com/embed/i6bUuvmgVrc'
   title='Iron Man PS4 VR'
 />
+
+## Code prismic
+
+#### Javascript
+
+```js
+// comments
+const name = 'john'
+const channel = 'coding addict'
+
+function featuredProducts(data) {
+  return data.filter((item) => {
+    return item.featured === true
+  })
+}
+featuredProducts()
+```
+
+#### JSX
+
+```jsx
+import React from 'react'
+
+const Counter = () => {
+  const [count, setCount] = React.useState(0)
+  return (
+    <section className='counter'>
+      <h4>show some love to MDX</h4>
+      <h4>likes {count}</h4>
+      <button className='btn btn-danger' onClick={() => setCount(count + 1)}>
+        i like mdx
+      </button>
+    </section>
+  )
+}
+export default Counter
+```
+
+#### HTML
+
+```html
+<h1>hello world</h1>
+<p class="random">random text</p>
+<section class="contact">
+  <div class="title">
+    <h1>contact us</h1>
+  </div>
+</section>
+```
+
+#### CSS
+
+```css
+max-width: 500px;
+border-radius: var(--radius);
+padding: 1rem 1.5rem;
+background: var(--clr-grey-10);
+text-align: center;
+```
 
 <Link to="/posts" className="btn center-btn">all posts</Link>
 </section>
